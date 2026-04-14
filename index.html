@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>F*CK IT FITNESS</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;700;900&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -16,7 +16,7 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 
 /* SCREENS */
 .screen{display:none;flex:1;flex-direction:column;overflow-y:auto;overflow-x:hidden;padding-bottom:70px;}
-.screen.active{display:flex;animation:fadeUp .25s ease;}
+.screen.active{display:flex;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
 /* NAV */
@@ -42,8 +42,8 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
    ONBOARDING
 ══════════════════════════════════ */
 #onboard{padding-bottom:0;background:var(--black);}
-.ob-slides{flex:1;position:relative;overflow:hidden;}
-.ob-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:32px 28px;text-align:center;opacity:0;transform:translateX(60px);transition:opacity .4s ease,transform .4s ease;pointer-events:none;}
+.ob-slides{flex:1;position:relative;overflow:hidden;min-height:0;}
+.ob-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:28px 28px 16px;text-align:center;opacity:0;transform:translateX(60px);transition:opacity .35s ease,transform .35s ease;pointer-events:none;overflow-y:auto;}
 .ob-slide.active{opacity:1;transform:translateX(0);pointer-events:all;}
 .ob-slide.exit{opacity:0;transform:translateX(-60px);}
 
@@ -55,9 +55,9 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 .ob-body strong{color:var(--white);}
 
 /* Name input slide */
-.ob-input{width:100%;background:#111;border:none;border-bottom:2px solid #2a2a2a;color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:3px;padding:12px 4px;outline:none;text-align:center;transition:border-color .2s;margin:20px 0 10px;}
+.ob-input{width:100%;background:#111;border:none;border-bottom:2px solid #2a2a2a;color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;padding:14px 8px;outline:none;text-align:center;transition:border-color .2s;margin:20px 0 10px;-webkit-appearance:none;border-radius:0;}
 .ob-input:focus{border-bottom-color:var(--red);}
-.ob-input::placeholder{color:#222;}
+.ob-input::placeholder{color:#2a2a2a;font-size:1.4rem;}
 
 /* Level picker */
 .ob-levels{display:flex;flex-direction:column;gap:10px;width:100%;margin-top:16px;}
@@ -821,6 +821,7 @@ function pickVoice(voice, el) {
 }
 
 function finishOnboarding() {
+  user.onboarded = true;
   saveUser();
   document.getElementById('home-name').textContent = user.name.toUpperCase();
   document.getElementById('prof-name').textContent = user.name.toUpperCase();
@@ -1215,10 +1216,21 @@ window.addEventListener('load',()=>{
   loadConfig();
   if(window.speechSynthesis) window.speechSynthesis.getVoices();
   renderVideoGrid();
-  // If user already onboarded, skip straight to home
+  // Only skip onboarding if user has previously completed it
   try {
     const s=localStorage.getItem('fi_user');
-    if(s) { const u=JSON.parse(s); if(u.name && u.name !== 'Warrior') { user={...user,...u}; finishOnboarding(); } }
+    if(s) {
+      const u=JSON.parse(s);
+      if(u.name && u.name !== 'Warrior' && u.onboarded === true) {
+        user={...user,...u};
+        document.getElementById('home-name').textContent = user.name.toUpperCase();
+        document.getElementById('prof-name').textContent = user.name.toUpperCase();
+        document.getElementById('prof-avatar').textContent = user.name.slice(0,2).toUpperCase();
+        document.getElementById('prof-voice').textContent = voiceLabel();
+        showScreen('home');
+        document.getElementById('main-nav').style.display = 'flex';
+      }
+    }
   } catch(e){}
 });
 </script>
