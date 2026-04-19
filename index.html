@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>F*CK IT FITNESS</title>
@@ -39,6 +37,68 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 .red-btn:active{background:var(--red-hot);transform:scale(.99);}
 .ghost-btn{width:100%;background:none;border:1px solid #2a2a2a;color:#555;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px;padding:14px;cursor:pointer;transition:border-color .2s,color .2s;}
 .ghost-btn:hover{border-color:var(--red);color:var(--red);}
+
+/* ══════════════════════════════════
+   SPLASH SCREEN
+══════════════════════════════════ */
+#splash{
+  position:fixed;inset:0;background:var(--black);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  z-index:9999;text-align:center;
+  max-width:430px;margin:0 auto;
+}
+#splash.hidden{display:none;}
+
+/* red flash overlay */
+.splash-flash{
+  position:fixed;inset:0;background:var(--red);
+  opacity:0;pointer-events:none;z-index:10000;
+  max-width:430px;margin:0 auto;
+}
+
+.splash-logo-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  opacity:0;transform:scale(0.4);
+}
+.splash-fck{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:7rem;letter-spacing:8px;line-height:1;
+  color:var(--white);
+}
+.splash-fck em{color:var(--red);font-style:normal;}
+.splash-fitness{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.6rem;letter-spacing:12px;
+  color:#333;margin-top:-8px;
+}
+.splash-line{
+  width:0;height:3px;background:var(--red);
+  margin:16px auto 0;
+}
+.splash-tagline{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:.8rem;letter-spacing:5px;
+  text-transform:uppercase;color:#2a2a2a;
+  margin-top:14px;opacity:0;
+}
+
+/* ══════════════════════════════════
+   DISCLAIMER
+══════════════════════════════════ */
+#disclaimer{padding-bottom:0;background:var(--black);justify-content:center;align-items:center;}
+.disc-wrap{padding:32px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0;}
+.disc-icon{font-size:3rem;margin-bottom:16px;}
+.disc-badge{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:4px;color:var(--red);text-transform:uppercase;border:1px solid var(--red);padding:4px 12px;margin-bottom:18px;}
+.disc-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:3px;line-height:1.05;margin-bottom:16px;}
+.disc-title em{color:var(--red);font-style:normal;}
+.disc-body{font-family:'Barlow',sans-serif;font-size:.88rem;color:#666;line-height:1.8;margin-bottom:24px;max-width:340px;}
+.disc-body strong{color:var(--white);}
+.disc-body em{color:var(--red);font-style:normal;}
+.disc-agree{width:100%;background:var(--red);color:var(--white);font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;border:none;padding:18px;cursor:pointer;margin-bottom:12px;transition:background .15s;}
+.disc-agree:active{background:var(--red-hot);}
+.disc-decline{width:100%;background:none;border:1px solid #222;color:#333;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:13px;cursor:pointer;}
+.disc-small{font-family:'Barlow',sans-serif;font-size:.65rem;color:#222;margin-top:14px;line-height:1.6;max-width:300px;}
 
 /* ══════════════════════════════════
    ONBOARDING
@@ -121,12 +181,12 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 /* ══════════════════════════════════
    WORKOUTS
 ══════════════════════════════════ */
-.level-tabs{display:flex;margin:16px 20px 0;background:var(--grey);border:1px solid var(--border);}
-.level-tab{flex:1;background:none;border:none;color:#444;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;padding:12px 4px;cursor:pointer;transition:all .2s;text-align:center;border-right:1px solid var(--border);}
+.level-tabs{display:flex;margin:16px 20px 0;background:var(--grey);border:1px solid var(--border);flex-shrink:0;}
+.level-tab{flex:1;background:none;border:none;color:#444;font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:1px;padding:13px 4px;cursor:pointer;transition:all .2s;text-align:center;border-right:1px solid var(--border);}
 .level-tab:last-child{border-right:none;}
 .level-tab.active{background:var(--red);color:var(--white);}
-.dur-tabs{display:flex;gap:8px;padding:14px 20px 0;}
-.dur-tab{background:none;border:1px solid #222;color:#444;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;cursor:pointer;transition:all .2s;}
+.dur-tabs{display:flex;gap:8px;padding:12px 20px;flex-shrink:0;}
+.dur-tab{background:none;border:1px solid #222;color:#444;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;cursor:pointer;transition:all .2s;}
 .dur-tab.active,.dur-tab:hover{background:var(--red);border-color:var(--red);color:var(--white);}
 .video-grid{padding:14px 20px;display:flex;flex-direction:column;gap:12px;}
 .video-card{background:var(--grey);border:1px solid var(--border);cursor:pointer;overflow:hidden;transition:border-color .2s,transform .15s;}
@@ -386,9 +446,42 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 </div>
 
 <!-- ══════════════════════════════════
+     SPLASH
+══════════════════════════════════ -->
+<div id="splash">
+  <div class="splash-logo-wrap" id="splash-logo">
+    <div class="splash-fck">F<em>*</em>CK IT</div>
+    <div class="splash-fitness">FITNESS</div>
+    <div class="splash-line" id="splash-line"></div>
+    <div class="splash-tagline" id="splash-tagline">No fluff. No excuses. Just results.</div>
+  </div>
+</div>
+<div class="splash-flash" id="splash-flash"></div>
+
+<!-- ══════════════════════════════════
+     DISCLAIMER
+══════════════════════════════════ -->
+<div class="screen" id="disclaimer">
+  <div class="disc-wrap">
+    <div class="disc-icon">⚠️</div>
+    <div class="disc-badge">CONTENT WARNING</div>
+    <div class="disc-title">THIS APP<br>WILL <em>SWEAR</em><br>AT YOU.</div>
+    <div class="disc-body">
+      F*CK IT Fitness contains <strong>strong language, brutal honesty, and absolutely zero sympathy.</strong><br><br>
+      This app will call you out. It will tell you when you're being lazy. It will use language that would make your gran blush.<br><br>
+      If you need someone to tell you <em>"you're amazing just for showing up"</em> — this is not that app.<br><br>
+      <strong>This is the app that tells you the truth.</strong> And sometimes the truth sounds like a Scottish drill sergeant who skipped their morning coffee.
+    </div>
+    <button class="disc-agree" onclick="acceptDisclaimer()">I CAN HANDLE IT — LET'S GO 💀</button>
+    <button class="disc-decline" onclick="declineDisclaimer()">Take me somewhere nicer</button>
+    <div class="disc-small">By continuing you confirm you are 18+, you understand this app uses strong language for motivational purposes, and you have a sense of humour. No actual drill sergeants were harmed in the making of this app.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
      ONBOARDING
 ══════════════════════════════════ -->
-<div class="screen active" id="onboard" style="padding-bottom:0;">
+<div class="screen" id="onboard" style="padding-bottom:0;">
   <div class="ob-slides" id="ob-slides">
 
     <!-- SLIDE 0: Welcome -->
@@ -543,17 +636,17 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
     <div class="page-title">VIDEO <em>LIBRARY</em></div>
     <div class="page-sub">Pick your level. Pick your poison.</div>
   </div>
-  <div class="level-tabs">
+  <div class="level-tabs" style="margin:16px 20px 0;flex-shrink:0;">
     <button class="level-tab active" id="lt-beginner" onclick="setLevelByName('beginner')">🟢 BEGINNER</button>
     <button class="level-tab" id="lt-intermediate" onclick="setLevelByName('intermediate')">🟠 INTER</button>
     <button class="level-tab" id="lt-advanced" onclick="setLevelByName('advanced')">🔴 ADVANCED</button>
   </div>
-  <div class="dur-tabs">
+  <div class="dur-tabs" style="flex-shrink:0;">
     <button class="dur-tab active" id="dt-15" onclick="setDurByName('15')">15 MIN</button>
     <button class="dur-tab" id="dt-30" onclick="setDurByName('30')">30 MIN</button>
     <button class="dur-tab" id="dt-35" onclick="setDurByName('35')">35 MIN</button>
   </div>
-  <div class="video-grid" id="video-grid"></div>
+  <div class="video-grid" id="video-grid" style="flex:1;"></div>
   <button class="add-video-btn" onclick="showNotif('Send your YouTube link!','Drop it in and I\'ll add it straight away.')">+ ADD YOUR YOUTUBE LINK</button>
 </div>
 
@@ -774,6 +867,15 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
 let user = { name:'Warrior', level:'beginner', voice:'scottish' };
 try { const s = localStorage.getItem('fi_user'); if(s) user = {...user,...JSON.parse(s)}; } catch(e){}
 
+function acceptDisclaimer() {
+  try { localStorage.setItem('fi_disc', 'yes'); } catch(e) {}
+  showScreen('onboard');
+}
+function declineDisclaimer() {
+  // Gentle redirect — they can still come back!
+  window.location.href = 'https://www.google.com/search?q=gentle+fitness+apps';
+}
+
 // ── ONBOARDING ──
 let obStep = 0;
 const OB_TOTAL = 5;
@@ -965,60 +1067,126 @@ const exercises = [
   { name:'PLANK', nameHtml:'PLANK <em>(suffer quietly)</em>', reps:60, unit:'SECONDS' },
 ];
 
-// ── ABUSE LINES (Scottish + Drill Sergeant) ──
+// ── ABUSE LINES — FULL NO HOLDS BARRED ──
 const scottishStart = [
-  `Right ${()=>user.name}, get aff your arse. We're doing this whether you like it or not.`,
-  `Och, would you look at you. Standing there. Move it, ya weapon.`,
-  `Listen up. Six exercises. No whining. No stopping. Away we go.`,
-  `I've seen pensioners move faster. Prove me wrong. Starting NOW.`,
+  `Right, listen up ya lazy bastard. I don't care how tired you are, I don't care what kind of day you've had. We're doing this. Move your arse. NOW.`,
+  `Oh look who finally showed up. Took your bloody time didn't it. Right, no more excuses, no more moaning. Six exercises. You WILL finish. Let's go.`,
+  `I've seen more effort from a sleeping sloth. You're going to change that right now or I swear to god I will never let you forget it. GET MOVING.`,
+  `You came here, that's the only thing you've done right today. Now stop standing there like a spare prick at a wedding and START.`,
 ];
 const drillStart = [
-  `Attention! Six exercises, zero excuses. Move your arse, NOW.`,
-  `Right. Let's see what you're made of. Probably disappointment, but let's find out.`,
-  `Time to earn your right to eat today. Let's go, let's go, LET'S GO.`,
-  `Your future self is watching. Don't embarrass them. Again.`,
+  `Listen up you lazy son of a bitch. I don't care that you're tired. I don't care that the sofa looked good tonight. You made a choice to be here. Now EARN it.`,
+  `Every single day you waste sitting on your arse is a day you'll never get back. Not today. Today we work. No excuses. No whining. Let's MOVE.`,
+  `You want results? Then stop being a pathetic excuse for an athlete and give me everything you've got. Six exercises. Full effort. No shortcuts. BEGIN.`,
+  `Other people are training right now while you make excuses. Not anymore. You're here. You're doing this. Disappoint me and I'll make sure you know about it. GO.`,
 ];
 const scottishMid = [
-  ["Aye, that's it — keep moving ya tube!","Stop slowing down, what are ye saving energy for, the sofa?","FASTER. I'm no' impressed yet.","Last few — dinnae you dare stop now!"],
-  ["Those squats look like you're sat on a wee invisible chair. LOWER.","Bend those knees properly ya muppet!","Jump! Like you actually MEAN it!","Last set — give it everything, ya dobber."],
-  ["Full range! None of this half-rep nonsense, I can see ye!","CHEST TO THE FLOOR. I'm no' negotiating wi' you.","What's your chest scared of? The floor? GET DOWN.","Nearly there — dinnae embarrass yourself at the finish line."],
-  ["Keep those feet moving! Don't you dare stop!","Hips UP — you're no' a hammock!","FASTER, this isnae a Sunday stroll!","Finish strong ya absolute rocket."],
-  ["HIGHER! I can barely see those knees from here!","Pick it up — this is embarrassing for BOTH of us!","Nearly there, stop greetin' and keep moving!","COME ON! Dig in ya weapon!"],
-  ["Hold it! HOLD IT! Dinnae you dare drop!","Stop shaking and commit, ya wee wobbler!","Ten more seconds — you've survived worse. Probably.","You're nearly done. Stop your moaning and HOLD IT."],
+  [
+    `That's it, keep going ya tube! Faster! What the f*ck are you saving energy for?`,
+    `I've seen pensioners move quicker than that. My dead gran could do better. PICK IT UP.`,
+    `Stop slowing down! You slow down now and I swear the whole set doesn't count. MOVE.`,
+    `Last few ya lazy bastard — dinnae you DARE stop now. Finish what you started for once in your life.`
+  ],
+  [
+    `Those squats look like you're trying to sit on an invisible toilet. That's embarrassing. GET LOWER.`,
+    `Lower! LOWER! Are your legs broken?! Because that's the only acceptable excuse for that pathetic depth!`,
+    `Jump like you actually give a sh*t! You look like you're stepping over a puddle!`,
+    `Last set — give it absolutely everything ya dobber. You can hate me after. GO.`
+  ],
+  [
+    `FULL range of motion! I can see those half reps from here and they're an absolute disgrace!`,
+    `Chest to the floor! I'm no' negotiating wi' you — all the way DOWN!`,
+    `What is your chest afraid of? The floor? It's not going to bite you! GET DOWN THERE!`,
+    `Nearly done — dinnae embarrass yourself at the finish line. Full reps. Every single one.`
+  ],
+  [
+    `Keep those feet MOVING! You stop and I add ten seconds — try me!`,
+    `Hips UP ya muppet! You're not a bloody hammock! ENGAGE YOUR CORE!`,
+    `Faster! This isnae a Sunday stroll through the park, this is a WORKOUT!`,
+    `Finish strong ya absolute rocket. You've come too far to half-arse the ending.`
+  ],
+  [
+    `HIGHER! I can barely see those knees! Are they actually moving or are you just hoping?!`,
+    `Pick it up — this is embarrassing for BOTH of us and I don't like being embarrassed!`,
+    `Nearly there — stop greetin' and stop looking at the clock and KEEP MOVING!`,
+    `COME ON! Dig in ya weapon! Everything you've got! RIGHT NOW!`
+  ],
+  [
+    `Hold it! HOLD IT! You drop that plank and we're starting the whole thing again — try me!`,
+    `Stop shaking and COMMIT ya wee wobbler! Pain is just weakness leaving your body!`,
+    `Ten more seconds! You've survived worse! Probably! HOLD THE BLOODY LINE!`,
+    `You are nearly done. Do NOT quit on the last exercise. That would be the most you thing imaginable. HOLD IT.`
+  ],
 ];
 const drillMid = [
-  ["You started. That's more than yesterday. Don't ruin it.","Keep that pace — what are you saving energy for?","FASTER. What exactly are you waiting for?","Last few — make them count or don't bother getting up tomorrow."],
-  ["Those squats look like you've forgotten how chairs work. LOWER.","LOWER! I can see the gap from here!","Jump like you actually mean it!","Last set — everything you've got. NOW."],
-  ["Full range of motion! None of this half-rep rubbish!","CHEST TO THE FLOOR. Non-negotiable.","What is your chest afraid of? The floor? GET DOWN.","Nearly there — don't embarrass yourself at the finish."],
-  ["Keep those feet moving!","Hips up — you're not a hammock!","FASTER. This is not a leisurely walk.","Finish strong — you've come this far."],
-  ["HIGHER! I can barely see those knees!","Pick up the pace — this is embarrassing for both of us!","Nearly there, stop looking at the clock and MOVE!","COME ON. Dig deep."],
-  ["Hold it! HOLD IT! Not yet!","Stop shaking and commit!","Ten more seconds. You've survived worse.","Nearly done. Hold on."],
+  [
+    `Is that the best you can do?! That is genuinely pathetic! Move your lazy arse FASTER!`,
+    `My dishwasher works harder than you and it doesn't have legs! PICK IT UP!`,
+    `You did NOT drag yourself here to half-arse it! Full effort! What are you saving it for?!`,
+    `Last few reps! You quit now and you'll think about it all night! FINISH IT!`
+  ],
+  [
+    `Those squats are an absolute insult to the exercise! Get LOWER or don't bother!`,
+    `I can see daylight under those squats and that means they don't count! ALL THE WAY DOWN!`,
+    `Jump like you mean it you lazy s*n of a b*tch! Put some bloody effort in!`,
+    `Last set! Everything! Right now! No excuses! GO!`
+  ],
+  [
+    `Full range! Every single rep! I see one more half rep and I'm adding five more! DON'T TEST ME!`,
+    `CHEST TO THE FLOOR! This is non-negotiable! All the way down!`,
+    `What exactly is your chest so scared of?! The floor?! GET DOWN THERE NOW!`,
+    `Nearly done — don't you dare embarrass yourself at the finish! FULL REPS!`
+  ],
+  [
+    `Keep moving! You stop those feet and I add time! Is that what you want?! KEEP GOING!`,
+    `Hips UP! You're not lying on a beach! This is a WORKOUT! ENGAGE!`,
+    `Faster! I have genuinely seen more urgency from people who don't care! MOVE!`,
+    `Finish strong! You've come this far! Don't ruin it with a pathetic ending!`
+  ],
+  [
+    `HIGHER! Are those actually knees or are they just decoration?! LIFT THEM!`,
+    `Pick up the pace! This is embarrassing and I refuse to be associated with this effort!`,
+    `Stop watching the clock and START MOVING! The clock goes faster when you work harder!`,
+    `COME ON! DIG DEEP! Everything you have! Right NOW!`
+  ],
+  [
+    `Hold that plank! You drop it and we do the whole workout again — I mean it!`,
+    `STOP SHAKING AND COMMIT! Pain is just your body realising it's actually being used!`,
+    `Ten seconds! You've survived worse than this! HOLD THE LINE!`,
+    `Last exercise! Do NOT quit now! That would be the single most pathetic thing you've ever done! HOLD IT!`
+  ],
 ];
 const scottishRest = [
-  "Breathe ya tadger. 30 seconds. Don't get comfortable.",
-  "Rest. Ye've earned it. Barely.",
-  "30 seconds. That's it. Then we're back at it.",
-  "Look at ye. Actually doing it. Don't let it go to your fat head.",
-  "Stop gasping like a fish. You're no' dying.",
-  "Rest up princess. The next one's worse. Obviously.",
-  "I'm no' impressed yet. But I'm watching. Always watching.",
-  "30 seconds of dignity before I put you back to work ya rocket.",
+  `30 seconds ya tube. Breathe. Don't get comfortable — I know where you live.`,
+  `Rest. You've barely earned it but here we are. 30 seconds. Then we're back at it.`,
+  `Aye, have a wee rest. Congratulations on completing the bare minimum. Next one's worse.`,
+  `Stop gasping like a dying fish. You're not dying. You just wish you were. 30 seconds.`,
+  `Look at the state of ye. Sweating and everything. Almost like it's supposed to be hard. REST.`,
+  `30 seconds of dignity. Then I'm putting you back to work ya rocket. Don't waste it.`,
+  `You're doing it. I'm still not impressed but you're doing it. Rest up. 30 seconds.`,
+  `Breathing's good. Quitting's not. You've got 30 seconds before I come for you again.`,
+  `That exercise is done. You survived. Barely. Rest now. Suffer again in 30 seconds.`,
+  `Right, sit there and think about your life choices. You've got 30 seconds. Then MOVE.`,
 ];
 const drillRest = [
-  "Breathe. 30 seconds. Don't get comfortable.",
-  "Rest. Because I said so. Not because you deserve it.",
-  "30 seconds. That's all you get.",
-  "Look at you. Actually showing up. Don't let it go to your head.",
-  "Stop gasping. You're not dying. You just wish you were.",
-  "Rest up. The next one's worse.",
-  "I'm not impressed yet. But I'm watching.",
-  "30 seconds of dignity before I put you back to work.",
+  `30 seconds. Catch your breath you absolute mess. Then we go again.`,
+  `Rest. Not because you deserve it. Because your body needs it. There's a difference.`,
+  `You're still here. That's the only good thing I can say right now. 30 seconds. Then GO.`,
+  `Stop making those noises. Nobody wants to hear it. Breathe properly. 30 seconds.`,
+  `Every other person is still on the sofa right now. You are not. Remember that. 30 seconds.`,
+  `I've seen worse. Not much worse. But worse. Rest up. We're not done.`,
+  `30 seconds. Use it. The next exercise does not care how tired you are.`,
+  `You want to quit. I know you want to quit. You're not going to. 30 seconds then MOVE.`,
+  `That's one down. Rest now. Think about how bad you'd feel if you quit right here. Use that. GO.`,
+  `Breathe. Regroup. Stop feeling sorry for yourself. You chose this. 30 seconds.`,
 ];
 const finishLines = [
-  `Done. You absolute weapon. That was decent. Don't tell anyone I said that.`,
-  `Finished. Now go eat something and come back tomorrow. Same time.`,
-  `You did it. Write that down so you remember what effort feels like.`,
-  `Workout complete. You've earned one smug look. Use it wisely.`,
+  `Done. You absolute weapon. That was actually not embarrassing. Don't tell anyone I said that.`,
+  `Finished. Now go eat something decent, drink some water, and come back tomorrow. Same time. No excuses.`,
+  `You did it. Write that down somewhere. Because on the days you want to quit, you need to remember what finishing feels like.`,
+  `Workout complete. You've earned exactly one smug look for the rest of the day. Don't overuse it.`,
+  `That's it. Done. I'm still not giving you a medal for doing what you should have been doing all along. But good work. Don't make me say that again.`,
+  `Session over. You showed up, you did the work, you didn't quit. That's three more things than most people managed today. Now go recover.`,
 ];
 
 function getLines(type, index) {
@@ -1193,13 +1361,28 @@ function setVI(active,msg) {
 }
 
 // ── NAV ──
+let audioUnlocked = false;
+function unlockAudio() {
+  if (audioUnlocked) return;
+  // Play a silent buffer to unlock audio on iOS/Android
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const buf = ctx.createBuffer(1,1,22050);
+    const src = ctx.createBufferSource();
+    src.buffer = buf; src.connect(ctx.destination); src.start(0);
+    audioUnlocked = true;
+  } catch(e) {}
+}
+
 function showScreen(id) {
+  unlockAudio();
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const hideNav = ['active','onboard','paywall'].includes(id);
+  const hideNav = ['active','onboard','paywall','disclaimer'].includes(id);
   document.getElementById('main-nav').style.display = hideNav ? 'none' : 'flex';
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   const nb=document.getElementById('nav-'+id); if(nb) nb.classList.add('active');
+  // Always re-render video grid when workouts tab opens
   if(id==='workouts') renderVideoGrid();
 }
 
@@ -1213,27 +1396,106 @@ function showNotif(msg,sub) {
   notifTimer=setTimeout(()=>n.classList.remove('show'),3500);
 }
 
+// ── SPLASH ANIMATION ──
+function runSplash(afterFn) {
+  const logo   = document.getElementById('splash-logo');
+  const line   = document.getElementById('splash-line');
+  const tag    = document.getElementById('splash-tagline');
+  const flash  = document.getElementById('splash-flash');
+  const splash = document.getElementById('splash');
+
+  // Step 1 — logo SLAMS in (scale + opacity)
+  setTimeout(() => {
+    logo.style.transition = 'opacity 0.15s ease, transform 0.15s cubic-bezier(0.2,2,0.4,1)';
+    logo.style.opacity = '1';
+    logo.style.transform = 'scale(1)';
+  }, 100);
+
+  // Step 2 — red line draws across
+  setTimeout(() => {
+    line.style.transition = 'width 0.4s ease';
+    line.style.width = '120px';
+  }, 300);
+
+  // Step 3 — tagline fades in
+  setTimeout(() => {
+    tag.style.transition = 'opacity 0.4s ease';
+    tag.style.opacity = '1';
+  }, 600);
+
+  // Step 4 — RED FLASH
+  setTimeout(() => {
+    flash.style.transition = 'opacity 0.08s ease';
+    flash.style.opacity = '1';
+  }, 1200);
+
+  // Step 5 — flash out fast
+  setTimeout(() => {
+    flash.style.transition = 'opacity 0.25s ease';
+    flash.style.opacity = '0';
+  }, 1320);
+
+  // Step 6 — second harder flash
+  setTimeout(() => {
+    flash.style.transition = 'opacity 0.06s ease';
+    flash.style.opacity = '0.7';
+  }, 1500);
+
+  // Step 7 — fade out completely
+  setTimeout(() => {
+    flash.style.transition = 'opacity 0.3s ease';
+    flash.style.opacity = '0';
+  }, 1600);
+
+  // Step 8 — hide splash, run next screen
+  setTimeout(() => {
+    splash.classList.add('hidden');
+    afterFn();
+  }, 1950);
+}
+
 // ── INIT ──
-window.addEventListener('load',()=>{
+window.addEventListener('load', () => {
   loadConfig();
-  if(window.speechSynthesis) window.speechSynthesis.getVoices();
+  if (window.speechSynthesis) window.speechSynthesis.getVoices();
   renderVideoGrid();
-  // Only skip onboarding if user has previously completed it
+
+  // Check if already onboarded
+  let alreadyDone = false;
   try {
-    const s=localStorage.getItem('fi_user');
-    if(s) {
-      const u=JSON.parse(s);
-      if(u.name && u.name !== 'Warrior' && u.onboarded === true) {
-        user={...user,...u};
-        document.getElementById('home-name').textContent = user.name.toUpperCase();
-        document.getElementById('prof-name').textContent = user.name.toUpperCase();
-        document.getElementById('prof-avatar').textContent = user.name.slice(0,2).toUpperCase();
-        document.getElementById('prof-voice').textContent = voiceLabel();
-        showScreen('home');
-        document.getElementById('main-nav').style.display = 'flex';
+    const s = localStorage.getItem('fi_user');
+    if (s) {
+      const u = JSON.parse(s);
+      if (u.name && u.name !== 'Warrior' && u.onboarded === true) {
+        user = {...user, ...u};
+        alreadyDone = true;
       }
     }
-  } catch(e){}
+  } catch(e) {}
+
+  // Always run splash first, THEN decide where to go
+  runSplash(() => {
+    unlockAudio();
+    renderVideoGrid();
+    if (alreadyDone) {
+      // Returning user — straight to home
+      document.getElementById('home-name').textContent = user.name.toUpperCase();
+      document.getElementById('prof-name').textContent = user.name.toUpperCase();
+      document.getElementById('prof-avatar').textContent = user.name.slice(0,2).toUpperCase();
+      document.getElementById('prof-voice').textContent = voiceLabel();
+      showScreen('home');
+      document.getElementById('main-nav').style.display = 'flex';
+    } else {
+      // First time — show disclaimer first
+      let discDone = false;
+      try { discDone = localStorage.getItem('fi_disc') === 'yes'; } catch(e) {}
+      if (discDone) {
+        showScreen('onboard');
+      } else {
+        showScreen('disclaimer');
+      }
+    }
+  });
 });
 </script>
 </body>
