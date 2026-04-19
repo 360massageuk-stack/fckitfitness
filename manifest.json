@@ -1,7 +1,7 @@
 {
   "name": "F*CK IT Fitness",
   "short_name": "F*CK IT",
-  "start_url": "/",
+  "start_url": "/fckitfitness/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
