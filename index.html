@@ -483,8 +483,8 @@ body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;
       <strong>This is the app that tells you the truth.</strong> And sometimes the truth sounds like a Scottish drill sergeant who skipped their morning coffee.
     </div>
     <button class="disc-agree" onclick="acceptDisclaimer()">I CAN HANDLE IT — LET'S GO 💀</button>
-    <button class="disc-decline" onclick="declineDisclaimer()">Take me somewhere nicer</button>
-    <div class="disc-small">By continuing you confirm you are 18+, you understand this app uses strong language for motivational purposes, and you have a sense of humour. No actual drill sergeants were harmed in the making of this app.</div>
+    <button class="disc-decline" onclick="declineDisclaimer()">Take me somewhere nicer 🌸</button>
+    <div class="disc-small">By continuing you confirm you are 18+, you understand this app uses strong language for motivational purposes, and you have a sense of humour. No actual drill sergeants were harmed in the making of this app.<br><br><em>* The flower arranging button is not a joke. We will actually send you there.</em></div>
   </div>
 </div>
 
@@ -882,8 +882,44 @@ function acceptDisclaimer() {
   showScreen('onboard');
 }
 function declineDisclaimer() {
-  // Gentle redirect — they can still come back!
-  window.location.href = 'https://www.google.com/search?q=gentle+fitness+apps';
+  document.body.innerHTML = `
+    <div style="
+      background:#fff8f8;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 28px;
+      font-family:Georgia,serif;
+    ">
+      <div style="font-size:4rem;margin-bottom:20px;">🌸🌷🌹</div>
+      <h1 style="font-size:1.8rem;color:#c0627a;margin-bottom:12px;font-weight:bold;">
+        Oh, bless your heart.
+      </h1>
+      <p style="font-size:1rem;color:#888;line-height:1.8;max-width:300px;margin-bottom:24px;">
+        That's completely fine, darling. Not everyone is ready for a bit of tough love.<br><br>
+        Perhaps a nice cup of tea and some gentle flower arranging is more your speed today. 🫖
+      </p>
+      <p style="font-size:0.8rem;color:#bbb;max-width:280px;line-height:1.7;">
+        Whenever you're ready to stop making excuses, the app will be right here.<br>
+        <em>Waiting. Judging. Silently.</em>
+      </p>
+      <button onclick="location.reload()" style="
+        margin-top:32px;
+        background:#c0627a;
+        color:white;
+        border:none;
+        padding:14px 32px;
+        font-size:0.9rem;
+        letter-spacing:2px;
+        text-transform:uppercase;
+        cursor:pointer;
+        font-family:Georgia,serif;
+      ">I've changed my mind 💪</button>
+    </div>
+  `;
 }
 
 // ── ONBOARDING ──
