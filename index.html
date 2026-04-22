@@ -619,7 +619,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
         <span class="sec-eyebrow">Send a message</span>
         <div class="sec-title" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">WE READ<br><em>EVERYTHING.</em></div>
         <div class="sec-body" style="margin-bottom:28px;">Feedback, bugs, questions, hate mail. We'll read it all.</div>
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzweabg" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzweabg" method="POST"><input type="hidden" name="_replyto" value="fckitfitnessapp@gmail.com"><input type="hidden" name="_subject" value="F*CK IT FITNESS — New Message">
           <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" name="name" placeholder="WHAT DO WE CALL YOU?" required></div>
           <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" name="email" placeholder="YOUR EMAIL ADDRESS" required></div>
           <div class="form-group"><label class="form-label">What's this about?</label><select class="form-select" name="subject"><option value="">SELECT A SUBJECT</option><option value="feedback">App Feedback</option><option value="bug">Bug Report</option><option value="merch">Merch Enquiry</option><option value="press">Press / Media</option><option value="other">Something Else</option></select></div>
@@ -630,7 +630,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       </div>
       <div class="fade-up fade-up-delay-2">
         <div class="contact-info">
-          <div class="info-card"><span class="info-icon">📍</span><div class="info-title">BASED IN EDINBURGH</div><div class="info-body">F*CK IT Fitness is built and run from Edinburgh, Scotland. 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Which explains the Scottish drill sergeant. He's local talent.</div></div>
+          <div class="info-card"><span class="info-icon">📧</span><div class="info-title">EMAIL US</div><div class="info-body"><a href="mailto:fckitfitnessapp@gmail.com" style="color:var(--red);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:1px;">fckitfitnessapp@gmail.com</a><br><br>We read everything. Responses may contain strong language.</div></div><div class="info-card"><span class="info-icon">📍</span><div class="info-title">BASED IN EDINBURGH</div><div class="info-body">F*CK IT Fitness is built and run from Edinburgh, Scotland. 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Which explains the Scottish drill sergeant. He's local talent.</div></div>
           <div class="info-card"><span class="info-icon">📱</span><div class="info-title">TRY THE APP</div><div class="info-body">The app is live now for testing. Free, no signup, works in your browser.<br><br><a onclick="showPage('app')">→ Open the app</a></div></div>
           <div class="info-card"><span class="info-icon">👕</span><div class="info-title">MERCH ENQUIRIES</div><div class="info-body">Interested in bulk orders, gym partnerships or custom merch? Use the contact form and select Merch Enquiry.</div></div>
           <div class="info-card"><span class="info-icon">📰</span><div class="info-title">PRESS & MEDIA</div><div class="info-body">Writing about us? Select Press/Media in the form and we'll come back to you. Probably.</div></div>
@@ -709,7 +709,8 @@ function notifyMe() {
   document.querySelector('.notify-form').style.display='none';
   document.getElementById('notify-success').style.display='block';
 }
-document.getElementById('merch-email').addEventListener('keydown', e => { if(e.key==='Enter') notifyMe(); });
+const merchEmail = document.getElementById('merch-email');
+if(merchEmail) merchEmail.addEventListener('keydown', e => { if(e.key==='Enter') notifyMe(); });
 
 // ── LAUNCH LIST ──
 function joinList() {
@@ -718,7 +719,8 @@ function joinList() {
   document.querySelector('.ll-form').style.display='none';
   document.getElementById('ll-success').style.display='block';
 }
-document.getElementById('ll-email').addEventListener('keydown', e => { if(e.key==='Enter') joinList(); });
+const llEmail = document.getElementById('ll-email');
+if(llEmail) llEmail.addEventListener('keydown', e => { if(e.key==='Enter') joinList(); });
 </script>
 </body>
 </html>
