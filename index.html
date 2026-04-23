@@ -333,7 +333,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       <li><a onclick="showPage('app')">The App</a></li>
       <li><a onclick="showPage('contact')">Contact</a></li>
     </ul>
-    <a class="nav-cta" onclick="showPage('app')">TRY THE APP</a>
+    <a class="nav-cta" href="app.html">TRY THE APP</a>
     <button class="nav-toggle" id="nav-toggle">MENU</button>
   </div>
 </nav>
@@ -360,7 +360,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       <div class="hero-tagline">No fluff. No excuses.<br><em>Just results — and a lot of abuse.</em></div>
       <div class="hero-sub">The fitness app that calls you out, swears at you, and refuses to accept your excuses. With a Scottish drill sergeant voice coach who has absolutely zero patience for your nonsense.</div>
       <div class="hero-btns">
-        <button class="btn-red" onclick="showPage('app')">TRY THE APP 💀</button>
+        <button class="btn-red" onclick="window.location.href='app.html'">TRY THE APP 💀</button>
         <button class="btn-ghost" onclick="showPage('features')">SEE FEATURES</button>
       </div>
     </div>
@@ -441,7 +441,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     <div class="cta-title fade-up">READY TO STOP<br><em>MAKING EXCUSES?</em></div>
     <div class="sec-body fade-up fade-up-delay-1" style="margin:0 auto 32px;text-align:center;">The app is live and ready for testing. Get in, suffer a bit, tell us what you think.</div>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;" class="fade-up fade-up-delay-2">
-      <button class="btn-red" onclick="showPage('app')">TRY THE APP FREE 💀</button>
+      <button class="btn-red" onclick="window.location.href='app.html'">TRY THE APP FREE 💀</button>
       <button class="btn-ghost" onclick="showPage('contact')">GET LAUNCH UPDATES</button>
     </div>
   </div>
@@ -450,8 +450,17 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     <div class="footer-inner">
       <div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">The fitness app that swears at you.<br>No fluff. No excuses. Just results.</div></div>
       <div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
-      <div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li><li><a onclick="showPage('merch')">View Merch</a></li></ul><div style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:3px;color:var(--dim);">LAUNCHING JUNE 2025</div></div>
-    </div>
+     <div>
+  <div class="footer-heading">GET INVOLVED</div>
+  <ul class="footer-links">
+    <li><a href="app.html">Try the App</a></li>
+    <li><a href="contact.html">Join Launch List</a></li>
+    <li><a href="merch.html">View Merch</a></li>
+  </ul>
+  <div style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:3px;color:var(--dim);">
+    LAUNCHING JUNE 2025
+  </div>
+</div>
     <div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div>
   </footer>
 </div>
@@ -499,7 +508,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       </div>
     </div>
   </div>
-  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">ENOUGH READING.<br><em>GO TRAIN.</em></div><div class="sec-body fade-up fade-up-delay-1" style="margin:16px auto 28px;">You've been on this page long enough. That counts as your warm-up.</div><button class="btn-red fade-up fade-up-delay-2" onclick="showPage('app')">TRY THE APP NOW 💀</button></div></div>
+  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">ENOUGH READING.<br><em>GO TRAIN.</em></div><div class="sec-body fade-up fade-up-delay-1" style="margin:16px auto 28px;">You've been on this page long enough. That counts as your warm-up.</div><button class="btn-red fade-up fade-up-delay-2" onclick=<button onclick="window.location.href='app.html'">TRY THE APP NOW 💀</button>
   <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">The fitness app that swears at you.<br>No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
 </div>
 
@@ -557,8 +566,8 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       </div>
     </div>
   </div>
-  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">SEEN ENOUGH?<br><em>GO TRY IT.</em></div><div class="sec-body fade-up fade-up-delay-1" style="margin:16px auto 28px;">The app is live and free to test.</div><button class="btn-red fade-up fade-up-delay-2" onclick="showPage('app')">TRY THE APP 💀</button></div></div>
-  <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
+  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">SEEN ENOUGH?<br><em>GO TRY IT.</em></div><div class="sec-body fade-up fade-up-delay-1" style="margin:16px auto 28px;">The app is live and free to test.</div><button class="btn-red fade-up fade-up-delay-2" onclick="window.location.href='app.html'">TRY THE APP 💀</button>
+  <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="window.location.href='app.html'">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
 </div>
 
 <!-- ════════════════════════════════
@@ -644,7 +653,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       </div>
     </div>
   </div>
-  <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('merch')">View Merch</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
+  <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="window.location.href='app.html'">Try the Appa></li><li><a onclick="showPage('merch')">View Merch</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
 </div>
 
 <script>
