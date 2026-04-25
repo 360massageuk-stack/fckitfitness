@@ -90,13 +90,13 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;}
 .footer-brand{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;text-indent:4px;color:var(--white);margin-bottom:8px;}
 .footer-brand em{color:var(--red);font-style:normal;}
-.footer-tagline{font-family:'Barlow',sans-serif;font-size:.8rem;color:var(--dim);line-height:1.6;}
-.footer-heading{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px;color:var(--dim);margin-bottom:14px;text-indent:3px;}
+.footer-tagline{font-family:'Barlow',sans-serif;font-size:.8rem;color:#888;line-height:1.6;}
+.footer-heading{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:3px;color:#aaa;margin-bottom:14px;text-indent:3px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.footer-links a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s;cursor:pointer;}
+.footer-links a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:#888;text-decoration:none;transition:color .2s;cursor:pointer;}
 .footer-links a:hover{color:var(--red);}
 .footer-bottom{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--worn);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.footer-copy{font-family:'Barlow',sans-serif;font-size:.7rem;color:var(--worn);letter-spacing:1px;}
+.footer-copy{font-family:'Barlow',sans-serif;font-size:.7rem;color:#888;letter-spacing:1px;}
 
 /* ══════════════════════════
    HOME PAGE
@@ -333,7 +333,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       <li><a onclick="showPage('app')">The App</a></li>
       <li><a onclick="showPage('contact')">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="https://https://360massageuk-stack.github.io/fckitfitness-app//">TRY THE APP</a>
+    <a class="nav-cta" onclick="showPage('app')">TRY THE APP</a>
     <button class="nav-toggle" id="nav-toggle">MENU</button>
   </div>
 </nav>
@@ -360,7 +360,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       <div class="hero-tagline">No fluff. No excuses.<br><em>Just results — and a lot of abuse.</em></div>
       <div class="hero-sub">The fitness app that calls you out, swears at you, and refuses to accept your excuses. With a Scottish drill sergeant voice coach who has absolutely zero patience for your nonsense.</div>
       <div class="hero-btns">
-        <a class="btn-red" href="https://https://360massageuk-stack.github.io/fckitfitness-app//">TRY THE APP 💀</a>
+        <a href="https://app.fckitfitness.co.uk" target="_blank" rel="noopener" class="btn-red">TRY THE APP 💀</a>
         <button class="btn-ghost" onclick="showPage('features')">SEE FEATURES</button>
       </div>
     </div>
@@ -416,7 +416,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
         <div class="sec-title">LOOKS GOOD.<br><em>HURTS MORE.</em></div>
         <div class="sec-body">Clean. Dark. Brutal. Built to be used in the middle of a workout when you're sweating. Simple, fast and impossible to ignore.<br><br><strong>Available now for testing.</strong> Full launch June 2025.</div>
         <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="btn-red" onclick="showPage('app')">TRY IT NOW</button>
+          <a href="https://app.fckitfitness.co.uk" target="_blank" rel="noopener" class="btn-red">TRY IT NOW</a>
           <button class="btn-ghost" onclick="showPage('features')">FULL FEATURES</button>
         </div>
       </div>
@@ -450,7 +450,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     <div class="footer-inner">
       <div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">The fitness app that swears at you.<br>No fluff. No excuses. Just results.</div></div>
       <div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div>
-      <div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li><li><a onclick="showPage('merch')">View Merch</a></li></ul><div style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:3px;color:var(--dim);">LAUNCHING JUNE 2025</div></div>
+      <div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li><li><a onclick="showPage('merch')">View Merch</a></li></ul><div style="margin-top:20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:3px;color:#888;">LAUNCHING JUNE 2025</div></div>
     </div>
     <div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div>
   </footer>
@@ -557,7 +557,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       </div>
     </div>
   </div>
-  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">SEEN ENOUGH?<br><em>GO TRY IT.</em></div><div class="sec-body fade-up fade-up-delay-1" style="margin:16px auto 28px;">The app is live and free to test.</div><button class="btn-red fade-up fade-up-delay-2" onclick="showPage('app')">TRY THE APP 💀</button></div></div>
+  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">SEEN ENOUGH?<br><em>GO TRY IT.</em></div><div class="sec-body fade-up fade-up-delay-1" style="margin:16px auto 28px;">The app is live and free to test.</div><a href="https://app.fckitfitness.co.uk" target="_blank" rel="noopener" class="btn-red fade-up fade-up-delay-2">TRY THE APP 💀</a></div></div>
   <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('app')">Try the App</a></li><li><a onclick="showPage('contact')">Join Launch List</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
 </div>
 
@@ -572,7 +572,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
         <span class="sec-eyebrow">Beta access</span>
         <div class="sec-title" style="font-size:clamp(2rem,4vw,3rem);">IT'S LIVE.<br><em>GO TRY IT.</em></div>
         <div class="sec-body">The app is available right now for testing. No account needed. No payment. Just open it, pick a session and find out what the abuse is about.</div>
-        <a href="https://https://360massageuk-stack.github.io/fckitfitness-app//" class="big-app-btn">OPEN THE APP NOW 💀</a>
+        <a href="https://app.fckitfitness.co.uk" target="_blank" rel="noopener" class="big-app-btn" >OPEN THE APP NOW 💀</a>
         <div class="beta-note"><div class="beta-note-title">⚠️ BETA VERSION</div><div class="beta-note-body">Work in progress. Video content is being filmed and will be added shortly. <strong>The voice coach, workouts, diary and all core features are fully working.</strong></div></div>
       </div>
       <div class="fade-up fade-up-delay-2" style="display:flex;justify-content:center;">
@@ -604,7 +604,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">IS THIS SUITABLE FOR COMPLETE BEGINNERS?</div><div class="faq-a">Yes. The Beginner level is genuinely beginner-friendly. Bodyweight only, no equipment, clear instructions. The abuse is there but it's more funny than aggressive. We want to push everyone harder, not put anyone off.</div></div>
     </div>
   </div>
-  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">STOP READING.<br><em>START TRAINING.</em></div><a href="https://https://360massageuk-stack.github.io/fckitfitness-app//" class="btn-red fade-up fade-up-delay-1" style="margin-top:24px;display:inline-block;">OPEN THE APP 💀</a></div></div>
+  <div class="band"><div class="band-inner" style="text-align:center;"><div class="sec-title fade-up">STOP READING.<br><em>START TRAINING.</em></div><a href="https://app.fckitfitness.co.uk" target="_blank" rel="noopener" class="btn-red fade-up fade-up-delay-1" style="margin-top:24px;display:inline-block;" >OPEN THE APP 💀</a></div></div>
   <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">F<em>*</em>CK IT FITNESS</div><div class="footer-tagline">No fluff. No excuses. Just results.</div></div><div><div class="footer-heading">PAGES</div><ul class="footer-links"><li><a onclick="showPage('home')">Home</a></li><li><a onclick="showPage('about')">About</a></li><li><a onclick="showPage('features')">Features</a></li><li><a onclick="showPage('merch')">Merch</a></li><li><a onclick="showPage('app')">The App</a></li><li><a onclick="showPage('contact')">Contact</a></li></ul></div><div><div class="footer-heading">GET INVOLVED</div><ul class="footer-links"><li><a onclick="showPage('contact')">Join Launch List</a></li><li><a onclick="showPage('merch')">View Merch</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 F*CK IT FITNESS. ALL RIGHTS RESERVED.</div><div class="footer-copy">FCKITFITNESS.CO.UK</div></div></footer>
 </div>
 
